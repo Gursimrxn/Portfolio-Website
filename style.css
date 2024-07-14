@@ -85,6 +85,7 @@
 }
 #header{
     transition: ease .69s;
+    width: 100vw;
 }
 #photo{
     transition: ease .69s .2s;
@@ -101,6 +102,10 @@ body {
     color: var(--text-color);
     /* cursor: url('Images/Cursor/pointer.cur'), auto; */
     transition: background-color 300ms ease;
+}
+body, html {
+    margin: 0;
+    padding: 0;
 }
 .cursor {
     position: fixed;
@@ -172,7 +177,6 @@ a {
     display: flex;
     align-items: center;
     transition: 1s ease;
-
 }
 .navbar a {
     font-size: 1.8rem;
@@ -865,6 +869,7 @@ span {
 @media screen and (max-width: 1285px){
     html{
         font-size: 55%;
+        overflow-x: hidden;
     }
     .service-container{
         padding-bottom: 7rem;
@@ -872,6 +877,9 @@ span {
     }
 }
 @media screen and (max-width: 991px){
+    body, html{
+        overflow-x: hidden;
+    }
     .header{
         padding: 2rem 3%;
     }
@@ -907,6 +915,9 @@ span {
     }
 }
 @media screen and (max-width: 895px){
+    body, html{
+        overflow-x: hidden;
+    }
     #menu-icon{
         display: block;
         transition: all 0.5s ease;
@@ -972,4 +983,49 @@ span {
     .service-container{
         grid-template-columns: 1fr;
     }
+}
+@media screen and (max-width: 650px) {
+    body, html {
+        overflow-x: hidden;
+    }
+    /* Styles for screens smaller than 600px wide */
+    .home-content h1 {
+        font-size: 4rem; /* Adjust as needed */
+    }
+    .home-content h3 {
+        font-size: 1.8rem; /* Adjust as needed */
+    }
+    .navbar {
+        width: 90%; /* Adjust width to fit within viewport */
+        padding: 1rem 1%; /* Adjust padding as needed */
+    }
+    .navbar a {
+        font-size: 1.4rem; /* Adjust font size for links */
+    }
+    .heading{
+        font-size: 6rem;
+    }
+    .testimonial-item{
+        min-height: 400px;
+    }
+    .container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+}
+@media screen and (max-width: 400px) {
+    body, html {
+        overflow-x: hidden;
+    }
+    .container {
+        max-width: 100%;
+        padding: 0 10px; 
+    }
+    .heading{
+        font-size: 4rem;
+    }
+    .timeline-content h3 {
+        font-size: 18px; /
+    }
+    
 }
