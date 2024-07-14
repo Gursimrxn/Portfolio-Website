@@ -92,43 +92,41 @@ smallCursor.forEach((item) => {
 
 // Dark Mode Enable / Disable
 
+// const darkModeToggle = document.getElementById("darkModeToggle");
+
+// Function to apply the selected theme
+function applyTheme(theme) {
+    if (theme === "dark") {
+        document.documentElement.style.setProperty("--main-color", "var(--main-color-dark)");
+        document.documentElement.style.setProperty("--bg-color", "var(--bg-color-dark)");
+        document.documentElement.style.setProperty("--text-color", "var(--text-color-dark)");
+        document.documentElement.style.setProperty("--secondary-bg-color", "var(--secondary-bg-color-dark)");
+        darkModeToggle.checked = true; // Update toggle state
+    } else {
+        document.documentElement.style.setProperty("--main-color", "var(--main-color-light)");
+        document.documentElement.style.setProperty("--bg-color", "var(--bg-color-light)");
+        document.documentElement.style.setProperty("--text-color", "var(--text-color-light)");
+        document.documentElement.style.setProperty("--secondary-bg-color", "var(--secondary-bg-color-light)");
+        darkModeToggle.checked = false; // Update toggle state
+    }
+}
+
+// Event listener for toggle change
 darkModeToggle.addEventListener("change", function () {
     if (this.checked) {
-        // Change to dark mode variables
-        document.documentElement.style.setProperty(
-            "--main-color",
-            "var(--main-color-dark)"
-        );
-        document.documentElement.style.setProperty(
-            "--bg-color",
-            "var(--bg-color-dark)"
-        );
-        document.documentElement.style.setProperty(
-            "--text-color",
-            "var(--text-color-dark)"
-        );
-        document.documentElement.style.setProperty(
-            "--secondary-bg-color",
-            "var(--secondary-bg-color-dark)"
-        );
+        applyTheme("dark");
+        localStorage.setItem("theme", "dark"); // Save theme preference to localStorage
     } else {
-        // Change back to light mode variables
-        document.documentElement.style.setProperty(
-            "--main-color",
-            "var(--main-color-light)"
-        );
-        document.documentElement.style.setProperty(
-            "--bg-color",
-            "var(--bg-color-light)"
-        );
-        document.documentElement.style.setProperty(
-            "--text-color",
-            "var(--text-color-light)"
-        );
-        document.documentElement.style.setProperty(
-            "--secondary-bg-color",
-            "var(--secondary-bg-color-light)"
-        );
+        applyTheme("light");
+        localStorage.setItem("theme", "light"); // Save theme preference to localStorage
+    }
+});
+
+// On page load, check localStorage for theme preference and apply it
+document.addEventListener("DOMContentLoaded", function() {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+        applyTheme(savedTheme);
     }
 });
 
@@ -165,6 +163,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
+});
+
+// Download CV
+document.querySelector('.hire').addEventListener('click', function() {
+    // Path to the file
+    const filePath = 'assets/Gursimran Singh\'s CV.pdf';
+
+    // Create a link element
+    const a = document.createElement('a');
+    a.href = filePath;
+    a.download = 'Gursimran Singh\'s CV.pdf'; // File name
+    a.click();
 });
 
 // // Highlight active navigation item based on scroll position
