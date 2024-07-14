@@ -9,10 +9,11 @@
             rel="stylesheet"
             href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
         />
+        <script src="https://cdn.jsdelivr.net/npm/baffle@0.3.6/dist/baffle.min.js"></script>
     </head>
     <body>
         <div class="cursor"></div>
-        <header class="header">
+        <header class="header hidden fade-down" id="header">
             <a href="#" class="logo hover-item">Gursimran <span>Singh</span></a>
             <div class="nav-container">
                 <nav class="navbar small">
@@ -24,62 +25,80 @@
                 </nav>
                 <div class="checkbox-wrapper-8 small">
                     <input
-                    class="tgl tgl-skewed"
-                    id="cb3-8 dark-mode-toggle"
-                    type="checkbox"
+                        class="tgl tgl-skewed"
+                        id="cb3-8 dark-mode-toggle"
+                        type="checkbox"
                     />
                     <label
-                    class="tgl-btn"
-                    data-tg-off="OFF"
-                    data-tg-on="ON"
-                    for="cb3-8 dark-mode-toggle"
+                        class="tgl-btn"
+                        data-tg-off="OFF"
+                        data-tg-on="ON"
+                        for="cb3-8 dark-mode-toggle"
                     ></label>
                 </div>
                 <i class="bx bx-menu" id="menu-icon"></i>
-        </div>
+            </div>
         </header>
         <section id="homelink">
             <div class="home" id="home">
                 <div class="home-content">
-                    <h1 class="hover-item">
-                        Hi, It's <span>Gursimran Singh</span>
+                    <h1 class="hover-item hidden fade-right">
+                        Hi, It's<br />
+                        <span class="data">Gursimran Singh</span>
                     </h1>
-                    <h3 class="text-animation">I'm a <span></span></h3>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Soluta eaque, doloribus eos sed ipsa excepturi
-                        sapiente quibusdam pariatur cum repellendus fugiat
-                        obcaecati error, nemo quidem, laborum iure maxime
-                        accusantium! Eveniet.
-                    </p>
 
-                    <div class="social-icons small">
-                        <a href="https://www.linkedin.com/in/gursimrxnsingh" target="_blank"><i class="bx bxl-linkedin"></i></a>
-                        <a href="https://github.com/Gursimrxn" target="_blank"><i class="bx bxl-github"></i></a>
-                        <a
-                            href="https://www.instagram.com/mysticaltrack.wav"
-                            target="_blank"
-                            ><i class="bx bxl-instagram-alt"></i>
-                        </a>
-                        <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
+                    <div class="sec2 hidden fade-right" id="sec2">
+                        <h3 class="text-animation">I'm a <span></span></h3>
+                        <p>
+                            Transforming <span>ideas</span> into practical solutions;
+                            <br>
+                            I excel in transforming ideas into practical solutions, deeply engaged in <span>Data Structures</span> and <span>Web Development</span>. My journey includes extensive problem-solving on platforms like <span>LeetCode</span>, reflecting my dedication to mastering diverse technical challenges.
+                            <br>
+                            Beyond coding, I find inspiration in <span>music</span>, integrating creativity into my tech-driven pursuits.
+                        </p>
                     </div>
+                    <div class="sec3 hidden fade-right" id="sec3">
+                        <div class="social-icons small">
+                            <a
+                                href="https://www.linkedin.com/in/gursimrxnsingh"
+                                target="_blank"
+                                ><i class="bx bxl-linkedin"></i
+                            ></a>
+                            <a
+                                href="https://github.com/Gursimrxn"
+                                target="_blank"
+                                ><i class="bx bxl-github"></i
+                            ></a>
+                            <a
+                                href="https://www.instagram.com/mysticaltrack.wav"
+                                target="_blank"
+                                ><i class="bx bxl-instagram-alt"></i>
+                            </a>
+                            <a href="#" target="_blank"
+                                ><i class="bx bxl-twitter"></i
+                            ></a>
+                            <a href="https://www.leetcode.com/Gursimrxn" target="_blank">
+                                <i class='bx bx-code-alt'></i>
+                            </a>
+                        </div>
 
-                    <div class="btn-group">
-                        <a href="#" class="btn">Hire</a>
-                        <a href="#contact" class="btn">Contact</a>
+                        <div class="btn-group">
+                            <a href="#" class="btn">Hire</a>
+                            <a href="#contact" class="btn">Contact</a>
+                        </div>
                     </div>
                 </div>
-                <div class="home-img small">
+                <div class="home-img small hidden fade-in" id="photo">
                     <img src="Images/image-transparent.png" alt="" />
                 </div>
             </div>
         </section>
 
-        <section class="education" id="education">
+        <section class="education hidden fade-up" id="education">
             <h2 class="heading hover-item">Education</h2>
 
             <div class="timeline-items">
-                <div class="timeline-item">
+                <div class="timeline-item hidden fade-right">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2020</div>
                     <div class="timeline-content">
@@ -94,7 +113,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item hidden fade-left">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2022</div>
                     <div class="timeline-content">
@@ -109,7 +128,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item hidden fade-right">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2023</div>
                     <div class="timeline-content">
@@ -124,7 +143,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item hidden fade-left">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2024</div>
                     <div class="timeline-content">
@@ -141,7 +160,7 @@
             </div>
         </section>
 
-        <section class="services" id="services">
+        <section class="services hidden fade-up" id="services">
             <h2 class="heading hover-item">Services</h2>
 
             <div class="service-container">
@@ -225,12 +244,12 @@
             </div>
         </section>
 
-        <section class="testimonials" id="testimonials">
+        <section class="testimonials hidden fade-up" id="testimonials">
             <div class="testimonials-box">
                 <h2 class="heading">Testimonials</h2>
 
                 <div class="wrapper">
-                    <div class="testimonial-item small">
+                    <div class="testimonial-item small hidden fade-right rating1">
                         <img src="Images/chitkara.jpg" alt="" />
                         <h2>Gursimran Singh</h2>
                         <div class="rating">
@@ -248,7 +267,7 @@
                             tempore numquam? Hic."
                         </p>
                     </div>
-                    <div class="testimonial-item small">
+                    <div class="testimonial-item small hidden fade-right rating2">
                         <img src="Images/park.jpg" alt="" />
                         <h2>Gursimran Singh</h2>
                         <div class="rating">
@@ -267,7 +286,7 @@
                         </p>
                     </div>
 
-                    <div class="testimonial-item small">
+                    <div class="testimonial-item small hidden fade-right rating3">
                         <img src="Images/front-mirror.jpg" alt="" />
                         <h2>Gursimran Singh</h2>
                         <div class="rating">
@@ -289,7 +308,7 @@
             </div>
         </section>
 
-        <section class="contact" id="contact">
+        <section class="contact hidden fade-up" id="contact">
             <h2 class="heading">Contact <span>Me</span></h2>
 
             <form action="">
@@ -318,16 +337,25 @@
                 </div>
             </form>
         </section>
-        <footer class="footer">
+        <footer class="footer hidden fade-up">
             <div class="socials small">
-                <a href="https://www.linkedin.com/in/gursimrxnsingh" target="_blank"><i class="bx bxl-linkedin"></i></a>
-                <a href="https://github.com/Gursimrxn" target="_blank"><i class="bx bxl-github"></i></a>
+                <a
+                    href="https://www.linkedin.com/in/gursimrxnsingh"
+                    target="_blank"
+                    ><i class="bx bxl-linkedin"></i
+                ></a>
+                <a href="https://github.com/Gursimrxn" target="_blank"
+                    ><i class="bx bxl-github"></i
+                ></a>
                 <a
                     href="https://www.instagram.com/mysticaltrack.wav"
                     target="_blank"
                     ><i class="bx bxl-instagram-alt"></i>
                 </a>
                 <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
+                <a href="https://www.leetcode.com/Gursimrxn" target="_blank">
+                    <i class='bx bx-code-alt'></i>
+                </a>
             </div>
             <ul class="list small">
                 <li>
@@ -345,13 +373,13 @@
                 <li>
                     <a href="#testimonials">Testimonials</a>
                 </li>
-                <p class="copyright">
-                    <p class="madewithlove">
-                        Made with <i class='bx bxs-heart'></i> by Gursimran <span>Singh</span>
-                    </p>
-                    <br>
-                    &copy; Gursimran Singh | All Rights Reserved
+                <p class="copyright"></p>
+                <p class="madewithlove">
+                    Made with <i class="bx bxs-heart"></i> by Gursimran
+                    <span>Singh</span>
                 </p>
+                <br />
+                &copy; Gursimran Singh | All Rights Reserved
             </ul>
         </footer>
         <script src="script.js"></script>
