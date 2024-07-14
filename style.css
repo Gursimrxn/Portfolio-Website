@@ -12,12 +12,12 @@
     /* cursor: none; */
 }
 :root {
-    --bg-color-dark: #116f8e;
-    --main-color-dark: #424874;
-    --secondary-bg-color-dark: #131313;
+    --bg-color-dark: #07020D;
+    --main-color-dark: #D1FFD7;
+    --secondary-bg-color-dark: #04151F;
     --text-color-dark: #dfedf4;
 
-    --bg-color-light: #edf7f6;
+    --bg-color-light: #E0FBFC;
     --main-color-light: #2e86ab;
     --text-color-light: #071013;
     --secondary-bg-color-light: #f8f8e8c6;
