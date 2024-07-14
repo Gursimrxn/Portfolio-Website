@@ -1008,6 +1008,9 @@ span {
     .testimonial-item{
         min-height: 400px;
     }
+    .timeline-item{
+        margin: 20px;
+    }
     .container {
         max-width: 100%;
         padding: 0 10px;
@@ -1026,6 +1029,9 @@ span {
     }
     .timeline-content h3 {
         font-size: 18px; /
+    }
+    .timeline-item{
+        margin: 20px;
     }
     
 }
