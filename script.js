@@ -9,6 +9,41 @@ const navBar = document.querySelector(".navbar");
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("header div nav a");
 
+const hiddenElements = document.querySelectorAll(".hidden");
+
+const observer = new IntersectionObserver((items) => {
+    items.forEach(item => {
+        if (!item.isIntersecting)
+            return;
+        if (item.target.classList.contains("fade-up")) {
+            item.target.classList.add("visible-up");
+            console.log(item.target);
+        }
+        else if (item.target.classList.contains("fade-right")) {
+            item.target.classList.add("visible-right");
+        }
+        else if (item.target.classList.contains("fade-left")) {
+            item.target.classList.add("visible-left");
+        }
+        else if (item.target.classList.contains("fade-in")) {
+            item.target.classList.add("visible-in");
+        }
+    })
+})
+
+hiddenElements.forEach((element) => {observer.observe(element)});
+// header.classList.remove("visible-down");
+document.addEventListener('DOMContentLoaded', (event) => {
+    const text = baffle(".data");
+    text.set({
+        characters: '░▒░ ░██░> @#$%^&*()_+[]{}<>?|~`!▓ >█> ░/█>█ █░ ░/░▒',
+        speed: 69
+    });
+
+    text.start();
+    text.reveal(2000);
+});
+window.onload = () => header.classList.add("visible-down");
 // interactive navbar
 
 window.onscroll = () => {

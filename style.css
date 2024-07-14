@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -6,14 +7,15 @@
     box-sizing: border-box;
     text-decoration: none;
     outline: none;
-    font-family: "Poppins", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Montserrat", Tahoma, Geneva, Verdana, sans-serif;
+    /* letter-spacing: 1px; */
     /* cursor: none; */
 }
 :root {
-    --bg-color-dark: #000808;
-    --main-color-dark: #c0ffee;
+    --bg-color-dark: #116f8e;
+    --main-color-dark: #424874;
     --secondary-bg-color-dark: #131313;
-    --text-color-dark: #f1f8e8;
+    --text-color-dark: #dfedf4;
 
     --bg-color-light: #edf7f6;
     --main-color-light: #2e86ab;
@@ -27,6 +29,73 @@
 
     --cursor-color: white;
 }
+.hidden{
+    filter: blur(5px);
+    transform: translateY(0);
+    opacity: 0;
+}
+.fade-up{
+    transform: translateY(220px);
+}
+.fade-right{
+    transform: translateX(-220px) scale(0.9);
+}
+.fade-left{
+    transform: translateX(220px) scale(0.9);
+}
+.fade-in{
+    opacity: 0;
+    transform: scale(0);
+    filter: blur(10px);
+}
+.fade-down{
+    opacity: 0;
+    transform: translateY(-220px);
+    filter: blur(10px);
+}
+.visible-up{
+    filter: blur(0);
+    transform: translateY(0);
+    transition: ease .6s;
+    opacity: 1;
+}
+.visible-right{
+    transition: ease .6s .2s;
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+}
+.visible-left{
+    transition: ease .6s .2s;
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+}
+.visible-in{
+    transition: ease .6s .2s;
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0);
+}
+.visible-down{
+    transition: ease .6s;
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+}
+#header{
+    transition: ease .69s;
+}
+#photo{
+    transition: ease .69s .2s;
+}
+#sec2{
+    transition: ease .69s .3s;
+}
+#sec3{
+    transition: ease .69s .4s;
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -44,7 +113,7 @@ body {
     mix-blend-mode: difference;
     box-shadow: 0 0 25px var(--cursor-color);
     transform: translate(-50%, -50%) scale(2);
-    transition: transform 300ms ease;
+    transition: transform 200ms ease;
     z-index: 999;
 
 }
@@ -205,6 +274,7 @@ span {
         0 0 100px var(--main-color);
 }
 .home-content p {
+    font-family: "Montserrat", sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 1.8;
@@ -252,7 +322,7 @@ span {
 }
 .btn-group {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     gap: 1.5rem;
 }
@@ -312,7 +382,7 @@ span {
     }
     41%,
     60% {
-        content: "UI / UX Designer";
+        content: "Cloud Enthusiast";
     }
     61%,
     80% {
@@ -576,6 +646,7 @@ span {
     align-items: center;
     grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
+    line-height: 2;
 }
 .service-box{
     height: 300px;
@@ -655,7 +726,7 @@ span {
     text-align: center;
     gap: 1.5rem;
     color: var(--text-color);
-    transition: 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 .testimonial-item:hover{
     border: 3px solid var(--main-color);
@@ -669,6 +740,29 @@ span {
 .testimonial-item p{
     font-size: 1.3rem;
 }
+
+.rating1{
+    transition: all 0.3s ease-in-out,
+            transform 0.69s ease 0.1s,
+            scale 0.69s ease 0.1s,
+            blur 0.69s ease 0.1s,
+            opacity 0.69s ease 0.1s;
+}
+.rating2{
+    transition: all 0.3s ease-in-out,
+            transform 0.69s ease 0.2s,
+            scale 0.69s ease 0.2s,
+            blur 0.69s ease 0.2s,
+            opacity 0.69s ease 0.2s;
+}
+.rating3{
+    transition: all 0.3s ease-in-out,
+            transform 0.69s ease 0.3s,
+            scale 0.69s ease 0.3s,
+            blur 0.69s ease 0.3s,
+            opacity 0.69s ease 0.3s;
+}
+
 .bxs-star{
     color: gold;
     font-size: 2rem;
@@ -734,7 +828,7 @@ span {
     transition: 0.3s ease-in-out;
 }
 .footer .socials a:hover{
-    transform: scale(1.2) translateY(10px);
+    transform: scale(1.2) translateY(-10px);
     background-color: var(--main-color);
     color: var(--text-color);
     box-shadow: 0 0 25px var(--main-color);
