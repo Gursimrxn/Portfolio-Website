@@ -866,6 +866,9 @@ span {
 .bxs-heart{
     color: #e31b23;
 }
+.home-content p{
+    min-width: 500px;
+}
 @media screen and (max-width: 1285px){
     html{
         font-size: 55%;
@@ -912,6 +915,9 @@ span {
     } 
     footer{
         padding: 2rem 3%;
+    }
+    .home-content p{
+        min-width: unset;
     }
 }
 @media screen and (max-width: 895px){
