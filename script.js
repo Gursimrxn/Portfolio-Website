@@ -10,6 +10,19 @@ const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("header div nav a");
 
 const hiddenElements = document.querySelectorAll(".hidden");
+const baffleText = document.querySelector(".data");
+
+const data = () => {
+    const text = baffle(".data");
+    text.set({
+        characters: '░▒░░██░>@#$%^&*()_+[??]{}<>?|~`!▓>█>░/█>██░░/░▒',
+        speed: 10
+    });
+    text.start();
+    setTimeout(() => {
+        text.reveal(1000);
+    }, 500);
+};
 
 const observer = new IntersectionObserver((items) => {
     items.forEach(item => {
@@ -31,21 +44,26 @@ const observer = new IntersectionObserver((items) => {
     })
 })
 
-hiddenElements.forEach((element) => {observer.observe(element)});
-// header.classList.remove("visible-down");
-document.addEventListener('DOMContentLoaded', (event) => {
+hiddenElements.forEach((element) => { observer.observe(element) });
+
+// Type Animation
+document.addEventListener("DOMContentLoaded", () => {
+    data();
+    header.classList.add("visible-down");
+});
+
+baffleText.addEventListener("mouseenter", () => {
+    baffleText.innerHTML = "Gursimran Singh";
     const text = baffle(".data");
     text.set({
-        characters: '░▒░ ░██░> @#$%^&*()_+[]{}<>?|~`!▓ >█> ░/█>█ █░ ░/░▒',
-        speed: 69
+        characters: '░▒░░██░>@#$%^&*()_+[??]{}<>?|~`!▓>█>░/█>██░░/░▒',
+        speed: 12
     });
 
     text.start();
-    text.reveal(2000);
+    text.reveal(1000);
 });
-window.onload = () => header.classList.add("visible-down");
 // interactive navbar
-
 window.onscroll = () => {
     sections.forEach(sec => {
         let top = window.scrollY;
@@ -95,7 +113,7 @@ smallCursor.forEach((item) => {
 // const darkModeToggle = document.getElementById("darkModeToggle");
 
 // Function to apply the selected theme
-function applyTheme(theme) {
+const applyTheme = (theme) => {
     if (theme === "dark") {
         document.documentElement.style.setProperty("--main-color", "var(--main-color-dark)");
         document.documentElement.style.setProperty("--bg-color", "var(--bg-color-dark)");
@@ -130,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-window.addEventListener("scroll", (e) => {
+window.addEventListener("scroll", () => {
     if (this.scrollY > 50) {
         header.style.setProperty("background-color", "rgba(0, 0, 0, 0.1");
         header.style.setProperty("backdrop-filter", "blur(6.9px)");
@@ -177,26 +195,30 @@ document.querySelector('.hire').addEventListener('click', function() {
     a.click();
 });
 
-// // Highlight active navigation item based on scroll position
-// const sections = document.querySelectorAll('section');
-// const navLinks = document.querySelectorAll('.navbar a');
-
-// window.addEventListener('scroll', () => {
-//     let current = '';
-
-//     sections.forEach(section => {
-//         const sectionTop = section.offsetTop;
-//         const sectionHeight = section.clientHeight;
-//         if (pageYOffset >= sectionTop - sectionHeight / 3) {
-//             current = section.getAttribute('id');
+// Contact Form
+// const form = document.getElementById('contact-form');
+// const formStatus = document.getElementById('form-status');
+// const formSubmit = document.getElementById('form-submit');
+// form.addEventListener('submit', function (e) {
+//     e.preventDefault();
+//     const data = new FormData(form);
+//     const xhr = new XMLHttpRequest();
+//     xhr.open(form.method, form.action, true);
+//     xhr.setRequestHeader('Accept', 'application/json');
+//     xhr.onreadystatechange = function () {
+//         if (xhr.readyState !== XMLHttpRequest.DONE) return;
+//         if (xhr.status === 200) {
+//             form.reset();
+//             formStatus.innerHTML = 'Thanks for your submission!';
+//             formSubmit.disabled = true;
+//         } else {
+//             formStatus.innerHTML = 'Oops! There was a problem.';
 //         }
-//     });
+//     };
+//     xhr.send(data);
+// });
 
-//     navLinks.forEach(a => {
-//         a.classList.remove('active');
-//         if (a.href.includes(`#${current}`)) {
-//             a.classList.add('active');
-//         }
-//     });
+// formSubmit.addEventListener('click', function() {
+//     formStatus.innerHTML = 'Sending...';
 // });
 

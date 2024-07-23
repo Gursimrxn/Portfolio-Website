@@ -35,13 +35,13 @@
     opacity: 0;
 }
 .fade-up{
-    transform: translateY(220px);
+    transform: translateY(300px);
 }
 .fade-right{
-    transform: translateX(-220px) scale(0.9);
+    transform: translateX(-300px) scale(0.9);
 }
 .fade-left{
-    transform: translateX(220px) scale(0.9);
+    transform: translateX(300px) scale(0.9);
 }
 .fade-in{
     opacity: 0;
@@ -50,7 +50,7 @@
 }
 .fade-down{
     opacity: 0;
-    transform: translateY(-220px);
+    transform: translateY(-300px);
     filter: blur(10px);
 }
 .visible-up{
@@ -102,6 +102,7 @@ body {
     color: var(--text-color);
     /* cursor: url('Images/Cursor/pointer.cur'), auto; */
     transition: background-color 300ms ease;
+    overflow-y: auto;
 }
 body, html {
     margin: 0;
@@ -208,7 +209,9 @@ section {
     min-height: 100vh;
     padding: 10rem 12% 10rem;
     transition: background-color 300ms ease, color 300ms ease;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 #home {
     display: flex;
@@ -283,6 +286,11 @@ span {
     font-weight: 500;
     line-height: 1.8;
     max-width: 1000px;
+    transition: all 0.3s ease,
+            transform 0.69s ease,
+            scale 0.69s ease
+            blur 0.69s ease,
+            opacity 0.69s ease;
 }
 .social-icons a {
     display: inline-flex;
@@ -378,23 +386,23 @@ span {
 @keyframes words {
     0%,
     20% {
-        content: "Full Stack developer";
+        content: "Web developer.";
     }
     21%,
     40% {
-        content: "Web Developer";
+        content: "Student.";
     }
     41%,
     60% {
-        content: "Cloud Enthusiast";
+        content: "Cloud Enthusiast.";
     }
     61%,
     80% {
-        content: "Software Engineer";
+        content: "Software Engineer.";
     }
     81%,
     100% {
-        content: ".NET Developer";
+        content: ".NET Developer.";
     }
 }
 @keyframes typing {
