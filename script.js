@@ -2,7 +2,7 @@ const cursor = document.querySelector(".cursor");
 const hoverItems = document.querySelectorAll(".hover-item");
 const smallCursor = document.querySelectorAll(".small");
 const darkModeToggle = document.querySelector(".tgl");
-const header = document.querySelector(".header"); 
+const header = document.querySelector(".header");
 
 const menuIcon = document.getElementById("menu-icon");
 const navBar = document.querySelector(".navbar");
@@ -15,8 +15,8 @@ const baffleText = document.querySelector(".data");
 const data = () => {
     const text = baffle(".data");
     text.set({
-        characters: '░▒░░██░>@#$%^&*()_+[??]{}<>?|~`!▓>█>░/█>██░░/░▒',
-        speed: 10
+        characters: "░▒░░██░>@#$%^&*()_+[??]{}<>?|~`!▓>█>░/█>██░░/░▒",
+        speed: 10,
     });
     text.start();
     setTimeout(() => {
@@ -25,26 +25,24 @@ const data = () => {
 };
 
 const observer = new IntersectionObserver((items) => {
-    items.forEach(item => {
-        if (!item.isIntersecting)
-            return;
+    items.forEach((item) => {
+        if (!item.isIntersecting) return;
         if (item.target.classList.contains("fade-up")) {
             item.target.classList.add("visible-up");
             console.log(item.target);
-        }
-        else if (item.target.classList.contains("fade-right")) {
+        } else if (item.target.classList.contains("fade-right")) {
             item.target.classList.add("visible-right");
-        }
-        else if (item.target.classList.contains("fade-left")) {
+        } else if (item.target.classList.contains("fade-left")) {
             item.target.classList.add("visible-left");
-        }
-        else if (item.target.classList.contains("fade-in")) {
+        } else if (item.target.classList.contains("fade-in")) {
             item.target.classList.add("visible-in");
         }
-    })
-})
+    });
+});
 
-hiddenElements.forEach((element) => { observer.observe(element) });
+hiddenElements.forEach((element) => {
+    observer.observe(element);
+});
 
 // Type Animation
 document.addEventListener("DOMContentLoaded", () => {
@@ -56,8 +54,8 @@ baffleText.addEventListener("mouseenter", () => {
     baffleText.innerHTML = "Gursimran Singh";
     const text = baffle(".data");
     text.set({
-        characters: '░▒░░██░>@#$%^&*()_+[??]{}<>?|~`!▓>█>░/█>██░░/░▒',
-        speed: 12
+        characters: "░▒░░██░>@#$%^&*()_+[??]{}<>?|~`!▓>█>░/█>██░░/░▒",
+        speed: 12,
     });
 
     text.start();
@@ -65,28 +63,29 @@ baffleText.addEventListener("mouseenter", () => {
 });
 // interactive navbar
 window.onscroll = () => {
-    sections.forEach(sec => {
+    sections.forEach((sec) => {
         let top = window.scrollY;
         let offset = sec.offsetTop - 150;
         let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+        let id = sec.getAttribute("id");
 
         if (top >= offset && top < offset + height) {
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header div nav a[href*=' + id + ' ]').classList.add('active');
+            navLinks.forEach((links) => {
+                links.classList.remove("active");
+                document
+                    .querySelector("header div nav a[href*=" + id + " ]")
+                    .classList.add("active");
             });
         }
     });
-}
-
+};
 
 let updateMousePosition = (e) => {
     const x = e.clientX;
     const y = e.clientY;
     cursor.style.left = x + "px";
     cursor.style.top = y + "px";
-}
+};
 
 window.addEventListener("mousemove", updateMousePosition);
 
@@ -115,19 +114,43 @@ smallCursor.forEach((item) => {
 // Function to apply the selected theme
 const applyTheme = (theme) => {
     if (theme === "dark") {
-        document.documentElement.style.setProperty("--main-color", "var(--main-color-dark)");
-        document.documentElement.style.setProperty("--bg-color", "var(--bg-color-dark)");
-        document.documentElement.style.setProperty("--text-color", "var(--text-color-dark)");
-        document.documentElement.style.setProperty("--secondary-bg-color", "var(--secondary-bg-color-dark)");
+        document.documentElement.style.setProperty(
+            "--main-color",
+            "var(--main-color-dark)"
+        );
+        document.documentElement.style.setProperty(
+            "--bg-color",
+            "var(--bg-color-dark)"
+        );
+        document.documentElement.style.setProperty(
+            "--text-color",
+            "var(--text-color-dark)"
+        );
+        document.documentElement.style.setProperty(
+            "--secondary-bg-color",
+            "var(--secondary-bg-color-dark)"
+        );
         darkModeToggle.checked = true; // Update toggle state
     } else {
-        document.documentElement.style.setProperty("--main-color", "var(--main-color-light)");
-        document.documentElement.style.setProperty("--bg-color", "var(--bg-color-light)");
-        document.documentElement.style.setProperty("--text-color", "var(--text-color-light)");
-        document.documentElement.style.setProperty("--secondary-bg-color", "var(--secondary-bg-color-light)");
+        document.documentElement.style.setProperty(
+            "--main-color",
+            "var(--main-color-light)"
+        );
+        document.documentElement.style.setProperty(
+            "--bg-color",
+            "var(--bg-color-light)"
+        );
+        document.documentElement.style.setProperty(
+            "--text-color",
+            "var(--text-color-light)"
+        );
+        document.documentElement.style.setProperty(
+            "--secondary-bg-color",
+            "var(--secondary-bg-color-light)"
+        );
         darkModeToggle.checked = false; // Update toggle state
     }
-}
+};
 
 // Event listener for toggle change
 darkModeToggle.addEventListener("change", function () {
@@ -141,7 +164,7 @@ darkModeToggle.addEventListener("change", function () {
 });
 
 // On page load, check localStorage for theme preference and apply it
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
         applyTheme(savedTheme);
@@ -152,73 +175,59 @@ window.addEventListener("scroll", () => {
     if (this.scrollY > 50) {
         header.style.setProperty("background-color", "rgba(0, 0, 0, 0.1");
         header.style.setProperty("backdrop-filter", "blur(6.9px)");
-        header.style.setProperty("box-shadow", "0 0 25px var(--secondary-bg-color-dark)");
+        header.style.setProperty(
+            "box-shadow",
+            "0 0 25px var(--secondary-bg-color-dark)"
+        );
         header.style.setProperty("transform", "scale(1.01)");
-    }
-    else {
-        header.style.setProperty("background-color", "rgba(0, 0, 0, 0.0")
+    } else {
+        header.style.setProperty("background-color", "rgba(0, 0, 0, 0.0");
         header.style.setProperty("backdrop-filter", "blur(0px)");
         header.style.setProperty("box-shadow", "none");
         header.style.setProperty("transform", "scale(1)");
     }
-    
 });
 
+const lenis = new Lenis({
+    lerp: 0.1,
+});
+
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
 menuIcon.addEventListener("click", () => {
-    menuIcon.classList.toggle('bx-x');
-    navBar.classList.toggle('active');
+    menuIcon.classList.toggle("bx-x");
+    navBar.classList.toggle("active");
 });
 
 // Smooth scroll to anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault(); // Prevent default anchor behavior
 
-        const target = document.querySelector(this.getAttribute('href'));
+        // Get the target element
+        const target = document.querySelector(this.getAttribute("href"));
+
+        // Scroll to the target element if it exists
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
+            lenis.scrollTo(target); // Use 'target' here
         }
     });
 });
 
+
 // Download CV
-document.querySelector('.hire').addEventListener('click', function() {
+document.querySelector(".hire").addEventListener("click", function () {
     // Path to the file
-    const filePath = 'assets/Gursimran Singh\'s CV.pdf';
+    const filePath = "assets/Gursimran Singh's CV.pdf";
 
     // Create a link element
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = filePath;
-    a.download = 'Gursimran Singh\'s CV.pdf'; // File name
+    a.download = "Gursimran Singh's CV.pdf"; // File name
     a.click();
 });
-
-// Contact Form
-// const form = document.getElementById('contact-form');
-// const formStatus = document.getElementById('form-status');
-// const formSubmit = document.getElementById('form-submit');
-// form.addEventListener('submit', function (e) {
-//     e.preventDefault();
-//     const data = new FormData(form);
-//     const xhr = new XMLHttpRequest();
-//     xhr.open(form.method, form.action, true);
-//     xhr.setRequestHeader('Accept', 'application/json');
-//     xhr.onreadystatechange = function () {
-//         if (xhr.readyState !== XMLHttpRequest.DONE) return;
-//         if (xhr.status === 200) {
-//             form.reset();
-//             formStatus.innerHTML = 'Thanks for your submission!';
-//             formSubmit.disabled = true;
-//         } else {
-//             formStatus.innerHTML = 'Oops! There was a problem.';
-//         }
-//     };
-//     xhr.send(data);
-// });
-
-// formSubmit.addEventListener('click', function() {
-//     formStatus.innerHTML = 'Sending...';
-// });
-
