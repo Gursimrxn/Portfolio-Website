@@ -223,7 +223,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 // Download CV
 document.querySelector(".hire").addEventListener("click", function () {
     // Path to the file
-    const filePath = "assets/Gursimran Singh's CV.pdf";
+    const filePath = "assets/Gursimran_Singh_CV.pdf";
 
     // Create a link element
     const a = document.createElement("a");
